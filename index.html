@@ -2,26 +2,53 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Web Ejemplo</title>
-<link rel="stylesheet" href="css/micss.css">
-<script src="Jquery/jquery-1.6.3.min.js"></script>
-<h1>
-	Hola a todos
-</h1>
-<script>
-var mensaje="hola script";
-alert(mensaje);
-</script>
+<title>Juega al Acertijo</title>
+<!-- <link rel="stylesheet" href="css/micss.css"> -->
+
+
+
 </head>
 
 <body>
 
-<h1>Hola alumnos
-</h1>
+<table width="25%" border="1">
+	<tr>
+		<td>
+			<label for="textfield"></label>
+			<input type="text" name="textfield" id="intentos" value="hola">
+		</td>
+		<td>
+			<input type="text" name="" id="puntuacion">
+		</td>		
+	</tr>
+</table>
+<!-- <img src="imgs/arbol.jpg" width="35%"> -->
 
-<p>Bienvenidos a la WEB <span> sdafsdfsd</span>.</p>
-<img src="imgs/arbol.jpg" width="35%">
+<!-- <input type="button" name="" value="Empezar a Jugar" id="boton1"> -->
+<script>		
+var aleatorio=Math.round((Math.random()*100));
+var numero=0;
+var puntuacion=100;
 
+var int=document.getElementById("intentos");
+var punt=document.getElementById("puntuacion");
 
+do{
+
+punt.value=puntuacion;
+	
+numero=prompt("Introduce un numero entre 0 y 100: ");
+
+if(numero>aleatorio){
+int.value="Más Bajo";
+document.write("holaaaa");
+}
+else if(numero<aleatorio){
+int.value="Más Alto";
+document.write("holaaaa");
+}
+puntuacion=puntuacion-10;
+}while(numero!=aleatorio && puntuacion>=0);
+</script>
 </body>
 </html>
