@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Compra</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body ng-controller="compraController">
+      <h1>Lista de la Compra</h1>
+      <div class="wrapper">
+        <div>
+            <div class="contact-item" ng-repeat="lista in listas | orderBy:'precio'">
+                Nombre: {{lista.nombre}} - Precio:  {{lista.precio}} - Necesario: {{lista.necesario}}.
+            </div>
+        </div>
+        </div>
+<br>
+<center><button ng-click="showForm()" ng-hide="ocultar">Agregar Comida</button></center>
+  <div ng-show="ocultar" class="wrapper">
+    <h2>Añadir Comida</h2>
+   Nombre: <input type="text" ng-model="nuevaComida.nombre"></input>
+   Precio: <input type="text" ng-model="nuevaComida.precio"></input><br><br>
+   Necesario: <input type="text" ng-model="nuevaComida.necesario"></input>
+   <button ng-click="Save()">Guardar</button>
+  </div>
+  <br>
+  <center><h1>Calcular Precio de los productos:</h1></center>
+<center><button ng-click="calcularNecesario()" ng-hide="false">Calcular Precio</button></center>
+<div ng-show="ocultar2">
+  <center><h1>{{precioFinal}}</h1></center>
+</div>
+        <script type="text/javascript" src="angular.min.js" ></script>
+        <script type="text/javascript" src="compraController.js"></script>
+    </body>
+</html>
