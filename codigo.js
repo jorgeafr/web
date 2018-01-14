@@ -1,3 +1,0 @@
-//JavaScript
-
-alert("Hola tronk");
